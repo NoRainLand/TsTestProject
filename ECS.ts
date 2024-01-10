@@ -34,3 +34,24 @@ class System {
         // Override this method in subclasses to implement system logic
     }
 }
+
+class RenderComponent extends Component {
+    color: string;
+
+    constructor(entity: Entity, color: string) {
+        super(entity);
+        this.color = color;
+    }
+}
+
+class RenderSystem extends System {
+    update(): void {
+        this.entities.forEach(entity => {
+            const renderComponent = entity.getComponent(RenderComponent);
+            if (renderComponent) {
+                // Render the entity using the data in the renderComponent
+                console.log(`Rendering entity ${entity.id} with color ${renderComponent.color}`);
+            }
+        });
+    }
+}
