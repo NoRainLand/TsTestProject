@@ -1,0 +1,18 @@
+{
+	"name": "ts_test_project",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"watch": "concurrently \"tsc --project ./tsconfig.json -w\" \"tsc --project ./tsconfig.es6.json -w\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "20.0.0",
+		"undici-types": "^6.16.0",
+		"concurrently": "^8.2.2",
+		"zlib": "^1.0.5"
+	}
+}
