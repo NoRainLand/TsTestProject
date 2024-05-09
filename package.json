@@ -11,8 +11,12 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@types/node": "20.0.0",
-		"undici-types": "^6.16.0",
 		"concurrently": "^8.2.2",
+		"undici-types": "^6.16.0",
 		"zlib": "^1.0.5"
+	},
+	"dependencies": {
+		"@types/jszip": "^3.4.1",
+		"jszip": "^3.10.1"
 	}
 }

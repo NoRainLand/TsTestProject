@@ -1,9 +1,10 @@
-import ResMgr from "./ResMgr";
+import { TestHuffman } from "./HuffmanCoding.js";
+
 
 export default class index {
-    constructor() {
-        ResMgr.instance.load("res/test.json", (data: any) => {
-            console.log(data);
-        });
+    constructor(){
+        // new LoadJson();
+        TestHuffman.test();
     }
 }
+new index();
