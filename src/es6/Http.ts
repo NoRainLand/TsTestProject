@@ -14,6 +14,7 @@ export class Http {
         };
         xhr.onerror = function (e) {
             console.log("error", e);
+            
         }
         xhr.send();
     }

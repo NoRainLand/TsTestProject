@@ -34,12 +34,14 @@ export default class LoadJson {
             let skill = window["jsonSkillOld"][this.skinUrl];
             for (let i = 0; i < skill.length; i++) {
                 Object.defineProperty(skill[i], 'desc', {
-                    get: function () {
-                        return "hehe";
-                    }
+                    get: this.testFun
                 });
             }
         });
+    }
+
+    testFun() {
+        return "hhh3";
     }
 
 
@@ -81,12 +83,14 @@ export default class LoadJson {
                 console.time("upZipOne");
                 // for (let key in zip.files) {
                 //     console.log(key);
-                    zip.files["skill.json"].async('string').then(function (data) {
-                        // console.log(data);
-                        // if(key =="skill.json"){
-                            console.timeEnd("upZipOne");
-                        // }
-                    });
+                zip.files["skill.json"].async('string').then(function (data) {
+                    console.log(typeof data);
+                    // if(key =="skill.json"){
+
+                    let skill = JSON.parse(data);
+                    console.timeEnd("upZipOne");
+                    // }
+                });
                 // }
             });
         });
