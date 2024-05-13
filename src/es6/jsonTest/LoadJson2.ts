@@ -29,20 +29,32 @@ export default class LoadJson {
     }
 
     loadSkillNew() {
-        window["jsonSkillOld"] = {};
-        this.downloadJson(this.skinUrl, window["jsonSkillOld"], () => {
-            let skill = window["jsonSkillOld"][this.skinUrl];
+        window["loadSkillNew"] = {};
+
+        window["testFun"] = function () {
+            return this.id;
+        }
+
+        this.downloadJson(this.skinUrl, window["loadSkillNew"], () => {
+            let skill = window["loadSkillNew"][this.skinUrl];
             for (let i = 0; i < skill.length; i++) {
                 Object.defineProperty(skill[i], 'desc', {
-                    get: this.testFun
+                    get: window["testFun"]
                 });
             }
         });
+
+        // sss[1]
+
+        // db]
+
+        // let obj: aa ;
+        // obj!.bb
+
+        // bb  = function
+
     }
 
-    testFun() {
-        return "hhh3";
-    }
 
 
     loadStr() {
