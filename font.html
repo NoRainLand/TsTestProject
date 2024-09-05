@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Canvas Font Rendering</title>
+		<style>
+			@font-face {
+				font-family: "zihun139hao";
+				src: url("font/zihun139hao-Regular.ttf");
+			}
+			body {
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background-color: #f0f0f0;
+			}
+			canvas {
+				border: 1px solid #000;
+			}
+
+			span {
+				font-family: "zihun139hao";
+				font-size: 600px;
+				color: aliceblue;
+				text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+			}
+		</style>
+	</head>
+	<body>
+		<span>领</span>
+		<canvas id="myCanvas" width="800" height="600"></canvas>
+		<script>
+			// 等待字体加载完成
+			document.fonts.load('10pt "zihun139hao"').then(() => {
+				// 获取画布和上下文
+				const canvas = document.getElementById("myCanvas");
+				const ctx = canvas.getContext("2d");
+
+				// 设置字体属性
+				ctx.font = '150px "zihun139hao"';
+				ctx.fillStyle = "aliceblue";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+
+				// 绘制文本
+				ctx.fillText("领", canvas.width / 2, canvas.height / 2);
+
+				// 添加描边效果
+				ctx.strokeStyle = "#000";
+				ctx.lineWidth = 10;
+				ctx.strokeText("领", canvas.width / 2, canvas.height / 2);
+			});
+		</script>
+	</body>
+</html>

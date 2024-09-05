@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>发送 Base64 数据</title>
+	</head>
+	<body>
+		<textarea id="inputText" rows="10" cols="50" placeholder="输入要发送的文本"></textarea>
+		<br />
+		<button onclick="sendBase64Data()">发送 Base64 数据</button>
+
+		<script>
+			function sendBase64Data() {
+				const inputText = document.getElementById("inputText").value;
+				const base64Data = btoa(inputText); // 将文本转换为 Base64 编码
+
+				fetch("http://localhost:8080", {
+					method: "POST",
+					headers: {
+						"Content-Type": "text/plain",
+					},
+					body: base64Data,
+				})
+					.then((response) => response.text())
+					.then((data) => {
+						console.log("Response from server:", data);
+						alert("服务器响应: " + data);
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+						alert("发送失败: " + error);
+					});
+			}
+		</script>
+	</body>
+</html>

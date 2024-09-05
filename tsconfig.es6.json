@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es2018",
+		"target": "es6",
 		"module": "ES6",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -9,7 +9,8 @@
 		"sourceMap": false,
 		"outDir": "./dist/es6",
 		"moduleResolution": "Node",
-		"strictPropertyInitialization": false
+		"strictPropertyInitialization": false,
+		"experimentalDecorators": true,
 	},
 	"include": ["./src/es6/**/*"]
 }

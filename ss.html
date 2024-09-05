@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main>
+			<div id="remark42"></div>
+		</main>
+	</body>
+	<script>
+		//核心思想就是在页面加载完成后，将remark42元素移动到main元素之后
+		//要么直接改html，要么你找个JS插入下面的代码
+		//你可以手动控制台输入以下代码,然后输入 moveFun(); 执行看看效果。
+
+		let moveFun = () => {
+			let remark42 = document.getElementById("remark42");
+			let main = document.querySelector("main");
+			if (main && remark42) {
+				remark42.parentNode.removeChild(remark42);
+				main.insertAdjacentElement("afterend", remark42);
+			}
+		};
+
+		// document.addEventListener("remark42:load", () => { //这个是监听remark42加载完成的事件，具体没测试过
+		// moveFun();
+		// });
+        //这个是页面加载完成后的事件
+		window.onload(() => {
+			moveFun();
+		});
+	</script>
+</html>
