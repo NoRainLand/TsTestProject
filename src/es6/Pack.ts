@@ -16,7 +16,6 @@ export class Pack {
         console.log(typeof text, text);
         console.timeEnd("load");
 
-
         console.time("load2");
         let pro2 = await fetch("../../res/data1.json");
         let text2 = await pro2.text();

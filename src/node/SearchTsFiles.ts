@@ -1,3 +1,11 @@
+/**
+ * 搜索包含所有关键字的.ts文件
+ * NoRain
+ * 2024/9/2
+ * 使用方式：
+ * node SearchTsFiles.ts 关键字1 关键字2 ...
+ */
+
 import * as fs from 'fs';
 import * as path from 'path';
 
